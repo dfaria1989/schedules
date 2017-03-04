@@ -1,34 +1,18 @@
 {
-  "name": "cornerstoneTools",
-  "version": "0.7.9",
-  "description": "Medical imaging tools for the Cornerstone library",
-  "keywords": [
-    "DICOM",
-    "medical",
-    "imaging"
-  ],
-  "author": "Chris Hafey, Prasath",
-  "homepage": "https://github.com/chafey/cornerstoneTools",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chafey/cornerstoneTools.git"
-  },
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "grunt": "^0.4.0",
-    "grunt-contrib-copy": "0.8.2",
-    "grunt-contrib-qunit": "^0.4.0",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-contrib-uglify": "^0.4.0",
-    "grunt-contrib-jshint": "^0.12.0",
-    "grunt-contrib-clean": "^0.7.0",
-    "grunt-jscs": "~2.7.0",
-    "grunt-version": "^1.0.0",
-    "load-grunt-tasks": "^3.4.0",
-    "jscs": "~2.9.0"
+    "axios": "^0.15.3",
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.1.1",
+    "laravel-mix": "^0.8.1",
+    "lodash": "^4.17.4",
+    "vue": "^2.1.10"
   }
 }
