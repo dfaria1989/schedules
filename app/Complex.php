@@ -42,6 +42,6 @@ class Complex extends Model
                            ->where('accepted_by_admin', true)
                            ->pluck('user_id');
 
-    return App\RegularUser::whereIn('id', $unapproved_users)->get();
+    return App\RegularUser::whereIn('id', $approved_users)->get();
   }
 }
