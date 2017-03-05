@@ -24,6 +24,8 @@ class CreateRegularUserComplexesTable extends Migration
         Schema::table('regular_user_complexes', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('complex_id')->references('id')->on('complexes');
+
+            $table->index(['user_id', 'complex_id']);
         });
     }
 
@@ -35,7 +37,9 @@ class CreateRegularUserComplexesTable extends Migration
     public function down()
     {
         Schema::table('regular_user_complexes', function (Blueprint $table) {
-            $table->dropForeign(['user_id', 'complex_id']);
+            $table->dropIndex(['user_id', 'complex_id']);
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['complex_id']);
         });
 
         Schema::dropIfExists('regular_user_complexes');
